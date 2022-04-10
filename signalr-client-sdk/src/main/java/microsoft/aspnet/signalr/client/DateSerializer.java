@@ -40,6 +40,7 @@ public class DateSerializer implements JsonSerializer<Date>, JsonDeserializer<Da
         } catch (ParseException e) {
             throw new JsonParseException(e);
         }
+
     }
 
     /**
@@ -55,25 +56,9 @@ public class DateSerializer implements JsonSerializer<Date>, JsonDeserializer<Da
      * Deserializes an ISO-8601 formatted date
      */
     public static Date deserialize(String strVal) throws ParseException {
-        
-    	String s;
-    	
-    	if(strVal.contains("+00:00")){
-    		strVal = strVal.replace("+00:00", "");
-    	}
-    	
-    	if(strVal.length() == 19){// adapt from format yyyy-MM-ddTHH:mm:dd
-    		s = strVal + ".+00:00";
-    	}else if(strVal.contains(".Z")){
-    		// Change .Z to +00:00 to adapt the string to a format
-            // that can be parsed in Java
-    		s = strVal.replace(".Z", ".+00:00");
-    	}else{ 
-    		// Change Z to +00:00 to adapt the string to a format
-            // that can be parsed in Java
-    		s = strVal.replace("Z", ".+00:00");
-    	}
-    	     
+        // Change Z to +00:00 to adapt the string to a format
+        // that can be parsed in Java
+        String s = strVal.replace("Z", "+00:00");
         try {
             // Remove the ":" character to adapt the string to a
             // format

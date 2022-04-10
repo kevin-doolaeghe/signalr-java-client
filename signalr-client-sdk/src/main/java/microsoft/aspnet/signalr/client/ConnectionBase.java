@@ -69,7 +69,7 @@ public interface ConnectionBase {
 
     /**
      * Triggers the Error event
-     * 
+     *
      * @param error
      *            The error that triggered the event
      * @param mustCleanCurrentConnection
@@ -131,7 +131,7 @@ public interface ConnectionBase {
 
     /**
      * Starts the connection
-     * 
+     *
      * @param transport
      *            Transport to be used by the connection
      * @return Future for the operation
@@ -150,7 +150,7 @@ public interface ConnectionBase {
 
     /**
      * Sends data using the connection
-     * 
+     *
      * @param data
      *            Data to send
      * @return Future for the operation
@@ -159,7 +159,7 @@ public interface ConnectionBase {
 
     /**
      * Prepares a request that is going to be sent to the server
-     * 
+     *
      * @param request
      *            The request to prepare
      */
@@ -174,11 +174,6 @@ public interface ConnectionBase {
      * Returns the Gson instance used by the connection
      */
     Gson getGson();
-
-    /**
-     * Sets the Gson instance used by the connection
-     */
-    void setGson(Gson gson);
 
     /**
      * Returns the JsonParser used by the connection
