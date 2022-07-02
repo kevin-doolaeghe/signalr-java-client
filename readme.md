@@ -6,7 +6,8 @@ This is is a fork of the original Microsoft SignalR java library.
 
 I upgraded the `Gson` library and removed old WebSocket library.  
  
-**Note :** This library is NOT compatible with [ASP.NET Core SignalR 2.0](https://github.com/aspnet/SignalR/issues/883#issuecomment-336499189).
+**Note :** This library is NOT compatible with [ASP.NET Core SignalR 2.0](https://github.com/aspnet/SignalR/issues/883#issuecomment-336499189).  
+Read [this](https://docs.microsoft.com/fr-fr/aspnet/core/signalr/version-differences?view=aspnetcore-6.0) article for more information about the differences between ASP.NET SignalR and ASP.NET Core SignalR.
 
 ASP.NET SignalR is a new library for ASP.NET developers that makes it incredibly simple to add real-time web functionality to your applications.
 
@@ -53,3 +54,5 @@ In the code, before using the library, you must initialize the platform to use a
 ```
 Platform.loadPlatformComponent(new AndroidPlatformComponent());
 ```
+
+## 
